@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <>
       <div className={style.left}>
-        <Image src={hlogo} alt="logo" className={style.logo} />
+        <Image src={hlogo} alt="logo" width={250} height={250} />
       </div>
       <div className={style.right}>
         <h1>지금 일어나고 있는 일</h1>
