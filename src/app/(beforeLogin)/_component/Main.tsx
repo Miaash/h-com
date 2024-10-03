@@ -1,13 +1,13 @@
 import Image from "next/image";
 import style from "@/app/(beforeLogin)/_component/main.module.css";
 import Link from "next/link";
-import zlogo from "../../../../public/zlogo.png";
+import hlogo from "../../../../public/hlogo.png";
 
 export default function Main() {
   return (
     <>
       <div className={style.left}>
-        <Image src={zlogo} alt="logo" />
+        <Image src={hlogo} alt="logo" className={style.logo} />
       </div>
       <div className={style.right}>
         <h1>지금 일어나고 있는 일</h1>
