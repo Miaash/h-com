@@ -7,11 +7,12 @@ import LogoutButton from "./_component/LogoutButton";
 import TrendSection from "./_component/TrendSection";
 import FollowRecommend from "./_component/FollowRecommend";
 
-export default function AfterLoginLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}) {
+  modal: React.ReactNode;
+};
+
+export default function AfterLoginLayout({ children, modal }: Props) {
   return (
     <div className={style.container}>
       <header className={style.leftSectionWrapper}>
@@ -26,7 +27,7 @@ export default function AfterLoginLayout({
               <ul>
                 <NavMenu />
               </ul>
-              <Link href="/compose/post" className={style.postButton}>
+              <Link href="/compose/tweet" className={style.postButton}>
                 Post
               </Link>
             </nav>
@@ -64,6 +65,7 @@ export default function AfterLoginLayout({
           </section>
         </div>
       </div>
+      {modal}
     </div>
   );
 }
