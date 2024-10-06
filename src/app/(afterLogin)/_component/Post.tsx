@@ -4,12 +4,19 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko"; // 한글 지원
 import ActionButtons from "./ActionButtons";
+import PostArticle from "./PostArticle";
+import { faker } from "@faker-js/faker";
 
 dayjs.extend(relativeTime);
-dayjs.locale("ko");
+// dayjs.locale("ko"); // 한글지원 플러그인 사용
 
-export default function Post() {
+type PostProps = {
+  noImage?: boolean;
+};
+
+export default function Post({ noImage }: PostProps) {
   const target = {
+    postId: 1,
     User: {
       id: "elonmusk",
       nickname: "Elon Musk",
@@ -17,10 +24,18 @@ export default function Post() {
     },
     content: "클론코딩도 쉽지 않았다.",
     createdAt: new Date(),
-    Images: [],
+    Images: [] as any,
   };
+
+  if (Math.random() > 0.5 && !noImage) {
+    target.Images.push({
+      imageId: 1,
+      link: faker.image.urlLoremFlickr(),
+    });
+  }
+
   return (
-    <article className={style.post}>
+    <PostArticle post={target}>
       <div className={style.postWrapper}>
         <div className={style.postUserSection}>
           <Link href={`/${target.User.id}`} className={style.postUserImage}>
@@ -43,15 +58,20 @@ export default function Post() {
           </div>
           <div>{target.content}</div>
           <div className={style.postImageSection}>
-            {/* {target.Images.length > 0 && (
-              <div className={style.postImageSection}>
-                <img src={target.Images[0]?.link} alt="" />
-              </div>
-            )} */}
+            {target.Images && target.Images.length > 0 && (
+              <Link
+                href={`/${target.User.id}/status/${target.postId}/photo/${target.Images[0].imageId}`}
+                className={style.postImageSection}
+              >
+                <div className={style.postImageSection}>
+                  <img src={target.Images[0]?.link} alt="" />
+                </div>
+              </Link>
+            )}
           </div>
           <ActionButtons />
         </div>
       </div>
-    </article>
+    </PostArticle>
   );
 }

@@ -46,7 +46,7 @@ export default function TweetModal() {
             <div className={style.inputDiv}>
               <textarea
                 className={style.input}
-                placeholder="무슨 일이 일어나고 있나요?"
+                placeholder="What is happening?!"
                 value={content}
                 onChange={onChangeContent}
               />

@@ -13,12 +13,12 @@ export default function RightSearchZone() {
     return (
       <>
         <div>
-          <h5 className={style.filterTitle}>검색 필터</h5>
+          <h5 className={style.filterTitle}>Search filters</h5>
           <div className={style.filterSection}>
             <div>
-              <label>사용자</label>
+              <label>People</label>
               <div className={style.radio}>
-                <div>모든 사용자</div>
+                <div>From anyone</div>
                 <input
                   type="radio"
                   name="pf"
@@ -27,7 +27,7 @@ export default function RightSearchZone() {
                 />
               </div>
               <div className={style.radio}>
-                <div>내가 팔로우하는 사람들</div>
+                <div>People you follow</div>
                 <input
                   type="radio"
                   name="pf"

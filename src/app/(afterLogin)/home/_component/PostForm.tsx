@@ -35,7 +35,7 @@ export default function PostForm() {
           <textarea
             value={content}
             onChange={(e) => onChange(e)}
-            placeholder="무슨 일이 일어나고 있나요?"
+            placeholder="What is happening?!"
           />
           <div className={style.postButtonSection}>
             <div className={style.footerButtons}>

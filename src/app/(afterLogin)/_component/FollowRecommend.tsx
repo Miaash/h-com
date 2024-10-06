@@ -23,7 +23,7 @@ export default function FollowRecommend() {
         <div className={style.count}>@{user.id}</div>
       </div>
       <div className={style.followButtonSection}>
-        <button onClick={onFollow}>팔로우</button>
+        <button onClick={onFollow}>Fllow</button>
       </div>
     </div>
   );

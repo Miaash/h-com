@@ -1,6 +1,10 @@
 import style from "./rightSearchZone.module.css";
 
-export default function SearchForm() {
+type SearchFormProps = {
+  q?: string;
+};
+
+export default function SearchForm({ q }: SearchFormProps) {
   return (
     <form className={style.search}>
       <svg
