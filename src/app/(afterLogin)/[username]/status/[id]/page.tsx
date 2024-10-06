@@ -1,3 +1,3 @@
-export default function page() {
-  return <div>page</div>;
+export default function UserStatusPage() {
+  return <div>UserStatusPage</div>;
 }
