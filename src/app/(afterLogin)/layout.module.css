@@ -13,12 +13,8 @@
 }
 
 .leftSection {
-  width: 275px;
+  width: 72px;
   height: 100dvh;
-}
-
-.leftSection nav li {
-  list-style-type: none;
 }
 
 .leftSectionFixed {
@@ -27,6 +23,23 @@
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  padding: 0 8px;
+  align-items: center;
+}
+
+/* 1300px이상부터 아래 css적용 */
+@media all and (min-width: 1300px) {
+  .leftSection {
+    width: 275px;
+  }
+
+  .leftSectionFixed {
+    align-items: flex-start;
+  }
+}
+
+.leftSection nav li {
+  list-style-type: none;
 }
 
 .leftSectionFixed nav {
@@ -57,10 +70,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52px;
   box-shadow: rgba(0, 0, 0, 0, 08) 0px 8px 28px;
   background-color: rgb(29, 155, 240);
-  width: 234px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
   border: none;
   color: rgb(255, 255, 255);
   font-weight: 700;
@@ -72,19 +87,73 @@
   background-color: rgb(26, 148, 216);
 }
 
+.postButton span {
+  display: none;
+}
+
+.postButton svg {
+  display: inline-block;
+  fill: white;
+}
+
+/* 1300px이상부터 아래 스타일링 적용  */
+@media all and (min-width: 1300px) {
+  .postButton {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0, 08) 0px 8px 28px;
+    background-color: rgb(29, 155, 240);
+    height: 52px;
+    width: 234px;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 26px;
+  }
+  .postButton span {
+    display: inline-block;
+  }
+  .postButton svg {
+    display: none;
+  }
+}
+
+.rightSection {
+  display: none;
+}
+
+.rightSectionInner {
+  display: flex;
+  height: 100%;
+  width: 600px;
+  justify-content: space-between;
+}
+
+/* 1024px때부터 생김 */
+@media all and (min-width: 1024px) {
+  .rightSection {
+    display: inline-block;
+    width: 350px;
+    height: 100%;
+  }
+
+  .rightSectionInner {
+    display: flex;
+    height: 100%;
+    width: 990px;
+    justify-content: space-between;
+  }
+}
+
 .rightSectionWrapper {
   display: flex;
   align-items: flex-start;
   height: 100dvh;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.rightSectionInner {
-  display: flex;
-  height: 100%;
-  width: 990px;
-  justify-content: space-between;
 }
 
 .main {
