@@ -1,6 +1,7 @@
 import style from "./profile.module.css";
 import Post from "@/app/(afterLogin)/_component/Post";
 import BackButton from "../_component/BackButton";
+import FollowButton from "../_component/FollowButton";
 
 /**
  * [유저페이지]
@@ -27,7 +28,7 @@ export default function ProfilePage() {
           <div>{user.nickname}</div>
           <div>@{user.id}</div>
         </div>
-        <button className={style.followButton}>Follow</button>
+        <FollowButton />
       </div>
       <div>
         <Post />

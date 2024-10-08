@@ -1,5 +1,6 @@
 "use server";
 
+import { signIn } from "@/auth";
 import { redirect } from "next/navigation";
 
 export default async (prevState: any, formData: FormData) => {
@@ -34,6 +35,12 @@ export default async (prevState: any, formData: FormData) => {
     }
     console.log(await response.json());
     shouldRedirect = true;
+    // 회원가입 후 로그인
+    await signIn("credentials", {
+      username: formData.get("id"),
+      password: formData.get("password"),
+      redirect: false,
+    });
   } catch (err) {
     console.error(err);
     return { message: null };
