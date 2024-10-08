@@ -15,11 +15,12 @@ export default function LoginModal() {
     e.preventDefault();
     setMessage("");
     try {
-      await signIn("credentials", {
+      const result = await signIn("credentials", {
         username: id,
         password,
         redirect: false,
       });
+      console.log(result);
       router.replace("/home");
     } catch (err) {
       console.error(err);
